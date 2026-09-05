@@ -63,6 +63,11 @@ public class SimulationEngineTest {
         CitySnapshot after = gameEngine.getCitySnapshot();
         assertEquals(2400.0, after.getBudget(), 0.001); // $2500 - $100
         assertTrue(grid.getCell(2, 2).isOccupied());
+        assertTrue(grid.isOccupied(2, 2));
+        assertNotNull(grid.GetBuilding(2, 2));
+        assertNotNull(grid.getCell(2, 2).GetBuilding());
+        assertTrue(gameEngine.isOccupied(2, 2));
+        assertNotNull(gameEngine.GetBuilding(2, 2));
     }
 
     @Test

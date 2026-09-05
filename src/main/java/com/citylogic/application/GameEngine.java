@@ -61,6 +61,22 @@ public class GameEngine {
         return simulationEngine.getCurrentSnapshot();
     }
 
+    public boolean isOccupied(int x, int y) {
+        return gridReader.isOccupied(x, y);
+    }
+
+    public boolean IsOccupied(int x, int y) {
+        return isOccupied(x, y);
+    }
+
+    public IBuildingState getBuilding(int x, int y) {
+        return gridReader.getBuilding(x, y);
+    }
+
+    public IBuildingState GetBuilding(int x, int y) {
+        return getBuilding(x, y);
+    }
+
     public PlacementResult placeBuilding(int x, int y, String typeId, boolean enforceBudget) {
         if (typeId == null || typeId.trim().isEmpty()) {
             return PlacementResult.failure("Invalid building type ID");

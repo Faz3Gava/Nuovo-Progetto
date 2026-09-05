@@ -12,6 +12,7 @@ public class Cell {
     private final Point position;
     private double pollutionLevel;
     private BuildingInstance currentBuilding;
+    public boolean isOccupied = false;
 
     public Cell(int x, int y) {
         this.x = x;
@@ -19,6 +20,7 @@ public class Cell {
         this.position = new Point(x, y);
         this.pollutionLevel = 0.0;
         this.currentBuilding = null;
+        this.isOccupied = false;
     }
 
     public int getX() {
@@ -37,16 +39,34 @@ public class Cell {
         return currentBuilding != null;
     }
 
+    public boolean IsOccupied() {
+        return isOccupied();
+    }
+
     public BuildingInstance getBuilding() {
+        return currentBuilding;
+    }
+
+    public BuildingInstance GetBuilding() {
         return currentBuilding;
     }
 
     public void setBuilding(BuildingInstance building) {
         this.currentBuilding = building;
+        this.isOccupied = (building != null);
+    }
+
+    public void SetBuilding(BuildingInstance building) {
+        setBuilding(building);
     }
 
     public void clear() {
         this.currentBuilding = null;
+        this.isOccupied = false;
+    }
+
+    public void Clear() {
+        clear();
     }
 
     public double getPollutionLevel() {

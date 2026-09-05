@@ -50,6 +50,43 @@ public class Grid implements IGridReadPort, IGridCommandPort {
         return map[x][y];
     }
 
+    public Cell getCell(Point point) {
+        if (point == null) return null;
+        return getCell(point.getX(), point.getY());
+    }
+
+    @Override
+    public boolean isOccupied(int x, int y) {
+        if (!isWithinBounds(x, y)) {
+            return false;
+        }
+        return map[x][y].isOccupied();
+    }
+
+    @Override
+    public BuildingInstance getBuilding(int x, int y) {
+        if (!isWithinBounds(x, y)) {
+            return null;
+        }
+        return map[x][y].getBuilding();
+    }
+
+    @Override
+    public BuildingInstance GetBuilding(int x, int y) {
+        return getBuilding(x, y);
+    }
+
+    @Override
+    public BuildingInstance getBuilding(Point point) {
+        if (point == null) return null;
+        return getBuilding(point.getX(), point.getY());
+    }
+
+    @Override
+    public BuildingInstance GetBuilding(Point point) {
+        return getBuilding(point);
+    }
+
     @Override
     public String getTerrainAt(int x, int y) {
         if (!isWithinBounds(x, y)) {
