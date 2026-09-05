@@ -1,0 +1,8 @@
+{
+  "name": "CityLogic",
+  "description": "Interactive city simulation and grid management application with transactional ticks, spatial placement, and municipal policy strategies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
